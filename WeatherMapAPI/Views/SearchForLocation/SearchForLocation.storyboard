@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gOH-co-7Eg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Location-->
+        <scene sceneID="RAn-tq-xWP">
+            <objects>
+                <viewController id="gOH-co-7Eg" customClass="SearchForLocationViewController" customModule="WeatherMapAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sDI-9S-KNN"/>
+                        <viewControllerLayoutGuide type="bottom" id="urf-He-0Tn"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Zk5-dQ-SUO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather" translatesAutoresizingMaskIntoConstraints="NO" id="m04-Pc-8mX">
+                                <rect key="frame" x="87.5" y="28" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="m04-Pc-8mX" secondAttribute="height" multiplier="1:1" id="gBe-cv-VQy"/>
+                                    <constraint firstAttribute="width" constant="200" id="izF-dT-frM"/>
+                                    <constraint firstAttribute="height" constant="200" id="zaK-RH-p1a"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjK-7h-N90">
+                                <rect key="frame" x="16" y="304" width="343" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Temperatura: 0 ˚C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DiV-SH-KH4">
+                                <rect key="frame" x="0.0" y="363" width="375" height="27"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6F-qU-al7" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="164.5" y="422" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="m04-Pc-8mX" firstAttribute="top" secondItem="sDI-9S-KNN" secondAttribute="bottom" constant="8" id="5eY-hs-Uci"/>
+                            <constraint firstItem="gjK-7h-N90" firstAttribute="top" secondItem="m04-Pc-8mX" secondAttribute="bottom" constant="76" id="A3f-iq-des"/>
+                            <constraint firstItem="B6F-qU-al7" firstAttribute="centerX" secondItem="Zk5-dQ-SUO" secondAttribute="centerX" id="BpJ-PF-A6Y"/>
+                            <constraint firstItem="DiV-SH-KH4" firstAttribute="top" secondItem="gjK-7h-N90" secondAttribute="bottom" constant="24" id="C7D-GS-8vA"/>
+                            <constraint firstItem="gjK-7h-N90" firstAttribute="centerX" secondItem="Zk5-dQ-SUO" secondAttribute="centerX" id="Gwk-lr-Qbq"/>
+                            <constraint firstItem="gjK-7h-N90" firstAttribute="width" secondItem="Zk5-dQ-SUO" secondAttribute="width" id="beu-AQ-cCQ"/>
+                            <constraint firstItem="DiV-SH-KH4" firstAttribute="width" secondItem="Zk5-dQ-SUO" secondAttribute="width" id="eew-df-mAT"/>
+                            <constraint firstItem="DiV-SH-KH4" firstAttribute="centerX" secondItem="Zk5-dQ-SUO" secondAttribute="centerX" id="fqk-JG-fGa"/>
+                            <constraint firstItem="B6F-qU-al7" firstAttribute="top" secondItem="DiV-SH-KH4" secondAttribute="bottom" constant="35" id="iK4-tO-jVF"/>
+                            <constraint firstItem="m04-Pc-8mX" firstAttribute="centerX" secondItem="Zk5-dQ-SUO" secondAttribute="centerX" id="lrP-1R-VX3"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Location" image="location" selectedImage="location" id="LTM-oH-sUJ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="gjK-7h-N90" id="yPf-tn-wcM"/>
+                        <outlet property="iconImage" destination="m04-Pc-8mX" id="M6e-eB-3gv"/>
+                        <outlet property="loginButton" destination="B6F-qU-al7" id="c8M-wf-3re"/>
+                        <outlet property="tempLabel" destination="DiV-SH-KH4" id="nzJ-JZ-Lw5"/>
+                        <segue destination="5iY-Yl-x1B" kind="show" identifier="segueForLogin" id="sAF-NF-HEc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BG8-j1-kGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="151.19999999999999" y="-359.37031484257875"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="0I7-hS-HUa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="5iY-Yl-x1B" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pib-UY-RQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="770" y="-333"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="location" width="32" height="32"/>
+        <image name="weather" width="256" height="256"/>
+    </resources>
+</document>

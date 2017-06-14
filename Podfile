@@ -8,6 +8,7 @@ target 'WeatherMapAPI' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
+  
 
   target 'WeatherMapAPITests' do
     inherit! :search_paths

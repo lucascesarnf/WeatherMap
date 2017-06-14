@@ -50,11 +50,29 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="Z1M-sl-x9B" id="Nhk-bX-Cze"/>
+                        <segue destination="PvE-dO-GNf" kind="show" identifier="segueForMenu" id="w7x-LF-0vN"/>
+                        <segue destination="7xw-MQ-G0U" kind="show" identifier="segueForWelcome" id="XNX-K0-jQU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GyQ-WF-QtC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-191.25" y="-138.75"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="cwL-Eg-Roi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" id="PvE-dO-GNf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HXU-S5-oOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506" y="-93"/>
+        </scene>
+        <!--Welcome-->
+        <scene sceneID="aoX-Ij-lCU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Welcome" id="7xw-MQ-G0U" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDx-Ea-vz3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="496" y="6"/>
         </scene>
     </scenes>
     <resources>

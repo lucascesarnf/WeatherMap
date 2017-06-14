@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zie-SZ-A5g">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="6fi-l4-gCm">
+            <objects>
+                <viewController id="Zie-SZ-A5g" customClass="WelcomeViewController" customModule="WeatherMapAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ppd-4N-fjC"/>
+                        <viewControllerLayoutGuide type="bottom" id="ViT-lX-Vhi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D1E-oe-dWE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="A9k-OS-w1p">
+                                <rect key="frame" x="63" y="10" width="249" height="256"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bem Vindo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JU-zL-l6r">
+                                <rect key="frame" x="93" y="243" width="188" height="37"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhG-st-F1b">
+                                <rect key="frame" x="16" y="297" width="343" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTV-gP-Rfq">
+                                <rect key="frame" x="63" y="415" width="249" height="55"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="e13-o5-fRI"/>
+                                    <constraint firstAttribute="width" constant="249" id="vyW-b5-25K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Começar">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.52169791489999995" green="0.7899649608" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionButton:" destination="Zie-SZ-A5g" eventType="touchUpInside" id="UyY-Qf-Jcp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9JU-zL-l6r" firstAttribute="top" secondItem="A9k-OS-w1p" secondAttribute="bottom" constant="-23" id="1cX-On-iPD"/>
+                            <constraint firstItem="KhG-st-F1b" firstAttribute="centerX" secondItem="A9k-OS-w1p" secondAttribute="centerX" id="DSz-7X-oB9"/>
+                            <constraint firstItem="A9k-OS-w1p" firstAttribute="top" secondItem="ppd-4N-fjC" secondAttribute="bottom" constant="-10" id="J7Q-7r-dU7"/>
+                            <constraint firstItem="DTV-gP-Rfq" firstAttribute="top" secondItem="KhG-st-F1b" secondAttribute="bottom" constant="82" id="PRf-vw-GP4"/>
+                            <constraint firstItem="KhG-st-F1b" firstAttribute="width" secondItem="A9k-OS-w1p" secondAttribute="height" multiplier="343:256" id="QDs-5K-CiF"/>
+                            <constraint firstItem="A9k-OS-w1p" firstAttribute="width" secondItem="D1E-oe-dWE" secondAttribute="height" multiplier="249:667" id="ZEU-hd-asz"/>
+                            <constraint firstItem="A9k-OS-w1p" firstAttribute="centerX" secondItem="D1E-oe-dWE" secondAttribute="centerX" id="i3Y-gJ-Fcv"/>
+                            <constraint firstItem="DTV-gP-Rfq" firstAttribute="centerX" secondItem="D1E-oe-dWE" secondAttribute="centerX" id="jt9-8k-PMD"/>
+                            <constraint firstItem="9JU-zL-l6r" firstAttribute="centerX" secondItem="A9k-OS-w1p" secondAttribute="centerX" id="rjU-Fy-2zk"/>
+                            <constraint firstItem="KhG-st-F1b" firstAttribute="top" secondItem="A9k-OS-w1p" secondAttribute="bottom" constant="31" id="tQm-UW-dSL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="KhG-st-F1b" id="thO-ff-uyY"/>
+                        <segue destination="FDd-nO-j5O" kind="show" identifier="segueForMenu" id="mnA-zV-zDP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WWn-s3-ZTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.799999999999997" y="35.532233883058474"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="Kpj-BA-bI5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" id="FDd-nO-j5O" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ink-OR-XPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="671" y="118"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cloud" width="256" height="256"/>
+    </resources>
+</document>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LEB-ZK-7QW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="fMq-7s-3YH">
+            <objects>
+                <tabBarController id="LEB-ZK-7QW" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" semanticContentAttribute="spatial" selectionIndicatorImage="cloud" itemPositioning="fill" id="ND3-JN-ENf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9sM-Ur-lkx" kind="relationship" relationship="viewControllers" id="uFX-1H-8cu"/>
+                        <segue destination="hSm-1q-OHc" kind="relationship" relationship="viewControllers" id="MEa-tm-35V"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oxR-4M-XAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-886" y="-238"/>
+        </scene>
+        <!--SearchForCity-->
+        <scene sceneID="0DY-ef-k1Z">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="searchForCity" storyboardName="SearchForCity" id="hSm-1q-OHc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" id="WKR-4C-BfM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUV-sd-zD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-246" y="-392"/>
+        </scene>
+        <!--SearchForLocation-->
+        <scene sceneID="gyU-w5-99W">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchForLocation" id="9sM-Ur-lkx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" id="K7A-go-8wk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Elf-xE-uSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-248" y="-59"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cloud" width="256" height="256"/>
+    </resources>
+</document>
