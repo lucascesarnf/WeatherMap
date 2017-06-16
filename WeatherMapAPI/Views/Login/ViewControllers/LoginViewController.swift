@@ -10,15 +10,18 @@ import UIKit
 import FBSDKLoginKit
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+  let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
   var loading:UIActivityIndicatorView = UIActivityIndicatorView()
    @IBOutlet weak var loginButton: FBSDKLoginButton!
     override func viewDidLoad() {
+      visualEffectView.frame = view.bounds
+      view.addSubview(visualEffectView)
       loading.center = self.view.center
       loading.hidesWhenStopped = false
       loading.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-      loading.backgroundColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5)
-      loading.transform = CGAffineTransform(scaleX: 2,y: 2)
-      loading.color = UIColor(colorLiteralRed: 0, green: 255, blue: 255, alpha: 1)
+      loading.backgroundColor = Main.sharedInstance.hexStringToUIColor(hex: "FB8E31")
+      loading.transform = CGAffineTransform(scaleX: 1.5,y: 1.5)
+      loading.color = Main.sharedInstance.hexStringToUIColor(hex: "FB8E31")
       view.addSubview(loading)
       loading.startAnimating()
       UIApplication.shared.beginIgnoringInteractionEvents()
@@ -32,11 +35,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
       loading.stopAnimating()
       loading.isHidden = true
       UIApplication.shared.endIgnoringInteractionEvents()
+      self.visualEffectView.removeFromSuperview()
       performSegue(withIdentifier: "segueForMenu", sender: self)
     }
     loading.stopAnimating()
     loading.isHidden = true
     UIApplication.shared.endIgnoringInteractionEvents()
+    self.visualEffectView.removeFromSuperview()
   }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -64,6 +69,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
   func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
     if let accessToken = FBSDKAccessToken.current(){
       print(accessToken.userID)
+      UIApplication.shared.endIgnoringInteractionEvents()
      performSegue(withIdentifier: "segueForWelcome", sender: self)
     }
   }

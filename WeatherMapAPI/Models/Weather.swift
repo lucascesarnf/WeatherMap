@@ -31,7 +31,7 @@ class Weather{
     
     if let temp1 = json["main"]?["temp"] as? Double {
       let tempC = temp1 - 273.15
-      let tempString: String = String(format:"%.1f", tempC)
+      let tempString: String = String(format:"%.0f", tempC)
       self.temp = tempString
     }
     

@@ -14,12 +14,11 @@
             <objects>
                 <tabBarController id="LEB-ZK-7QW" sceneMemberID="viewController">
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" semanticContentAttribute="spatial" selectionIndicatorImage="cloud" itemPositioning="fill" id="ND3-JN-ENf">
+                    <tabBar key="tabBar" contentMode="scaleToFill" semanticContentAttribute="spatial" selectionIndicatorImage="blank" itemPositioning="fill" id="ND3-JN-ENf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.94901960780000005" green="0.62352941179999999" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="9sM-Ur-lkx" kind="relationship" relationship="viewControllers" id="uFX-1H-8cu"/>
@@ -52,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cloud" width="256" height="256"/>
+        <image name="blank" width="256" height="256"/>
     </resources>
 </document>

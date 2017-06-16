@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather" translatesAutoresizingMaskIntoConstraints="NO" id="m04-Pc-8mX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m04-Pc-8mX">
                                 <rect key="frame" x="87.5" y="28" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="m04-Pc-8mX" secondAttribute="height" multiplier="1:1" id="gBe-cv-VQy"/>
@@ -30,29 +30,40 @@
                                     <constraint firstAttribute="height" constant="200" id="zaK-RH-p1a"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjK-7h-N90">
-                                <rect key="frame" x="16" y="304" width="343" height="40"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjK-7h-N90">
+                                <rect key="frame" x="16" y="287" width="343" height="40"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="29"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Temperatura: 0 ˚C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DiV-SH-KH4">
-                                <rect key="frame" x="0.0" y="363" width="375" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DiV-SH-KH4">
+                                <rect key="frame" x="27" y="335" width="320" height="27"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6F-qU-al7" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="164.5" y="422" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6F-qU-al7">
+                                <rect key="frame" x="87" y="392" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="atj-4f-ZM5"/>
+                                    <constraint firstAttribute="height" constant="30" id="l79-Av-2GS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonClicked:" destination="gOH-co-7Eg" eventType="touchUpInside" id="eiL-gd-KzZ"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="m04-Pc-8mX" firstAttribute="top" secondItem="sDI-9S-KNN" secondAttribute="bottom" constant="8" id="5eY-hs-Uci"/>
-                            <constraint firstItem="gjK-7h-N90" firstAttribute="top" secondItem="m04-Pc-8mX" secondAttribute="bottom" constant="76" id="A3f-iq-des"/>
+                            <constraint firstItem="gjK-7h-N90" firstAttribute="top" secondItem="m04-Pc-8mX" secondAttribute="bottom" constant="60" id="A3f-iq-des"/>
                             <constraint firstItem="B6F-qU-al7" firstAttribute="centerX" secondItem="Zk5-dQ-SUO" secondAttribute="centerX" id="BpJ-PF-A6Y"/>
-                            <constraint firstItem="DiV-SH-KH4" firstAttribute="top" secondItem="gjK-7h-N90" secondAttribute="bottom" constant="24" id="C7D-GS-8vA"/>
+                            <constraint firstItem="DiV-SH-KH4" firstAttribute="top" secondItem="gjK-7h-N90" secondAttribute="bottom" constant="15" id="C7D-GS-8vA"/>
                             <constraint firstItem="gjK-7h-N90" firstAttribute="centerX" secondItem="Zk5-dQ-SUO" secondAttribute="centerX" id="Gwk-lr-Qbq"/>
                             <constraint firstItem="gjK-7h-N90" firstAttribute="width" secondItem="Zk5-dQ-SUO" secondAttribute="width" id="beu-AQ-cCQ"/>
                             <constraint firstItem="DiV-SH-KH4" firstAttribute="width" secondItem="Zk5-dQ-SUO" secondAttribute="width" id="eew-df-mAT"/>
@@ -66,14 +77,14 @@
                     <connections>
                         <outlet property="cityLabel" destination="gjK-7h-N90" id="yPf-tn-wcM"/>
                         <outlet property="iconImage" destination="m04-Pc-8mX" id="M6e-eB-3gv"/>
-                        <outlet property="loginButton" destination="B6F-qU-al7" id="c8M-wf-3re"/>
+                        <outlet property="logoutButton" destination="B6F-qU-al7" id="E28-8j-bKu"/>
                         <outlet property="tempLabel" destination="DiV-SH-KH4" id="nzJ-JZ-Lw5"/>
                         <segue destination="5iY-Yl-x1B" kind="show" identifier="segueForLogin" id="sAF-NF-HEc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BG8-j1-kGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151.19999999999999" y="-359.37031484257875"/>
+            <point key="canvasLocation" x="150" y="-360"/>
         </scene>
         <!--Login-->
         <scene sceneID="0I7-hS-HUa">
@@ -86,6 +97,5 @@
     </scenes>
     <resources>
         <image name="location" width="32" height="32"/>
-        <image name="weather" width="256" height="256"/>
     </resources>
 </document>
