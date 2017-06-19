@@ -23,6 +23,7 @@ class SearchForLocationViewController: UIViewController , CLLocationManagerDeleg
   var weather : Weather?
   
   override func viewDidLoad() {
+    //Loading :
     visualEffectView.frame = view.bounds
     view.addSubview(visualEffectView)
     loading.center = self.view.center
@@ -47,6 +48,23 @@ class SearchForLocationViewController: UIViewController , CLLocationManagerDeleg
     
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    determineCurrentLocation()
+  }
+  
+  func determineCurrentLocation()
+  {
+    locationManager = CLLocationManager()
+    locationManager.delegate = self
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    locationManager.requestAlwaysAuthorization()
+    
+    if CLLocationManager.locationServicesEnabled() {
+      locationManager.startUpdatingHeading()
+      locationManager.startUpdatingLocation()
+    }
+  }
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }

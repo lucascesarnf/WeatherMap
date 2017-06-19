@@ -16,7 +16,7 @@ class Weather{
   var main : String = ""
   var icon : String = ""
   var temp: String = ""
-  
+  var cod: Int = 0
   init(json: [String: AnyObject]) {
     /*if let city1 = String(describing: json["name"]), let country1 = String(describing: json["sys"]?["country"]), let description1 = String(describing: (json["weather"]?[0] as AnyObject)["description"]), let main1 = String(describing: (json["weather"]?[0] as AnyObject)["main"]), let icon1 = String(describing: (json["weather"]?[0] as AnyObject)["icon"]), let tempK1 = Double(String(describing: json["main"]?["temp"])){
     }
@@ -41,6 +41,9 @@ class Weather{
     
     if let description1 = (json["weather"]?[0] as AnyObject)["description"] as? String{
       self.description = description1
+    }
+    if let code = json["cod"] as? Int{
+     self.cod = code
     }
     /*let country1 = json["sys"]?["country"] as? String, let description1 = (json["weather"]?[0] as AnyObject)["description"] as? String, let main1 = (json["weather"]?[0] as AnyObject)["main"] as? String, let icon1 =  (json["weather"]?[0] as AnyObject)["icon"] as? String, let temp1 = json["main"]?["temp"] as? String {
       self.city = city1

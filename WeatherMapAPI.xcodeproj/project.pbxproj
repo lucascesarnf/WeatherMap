@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		55B14DE9B7CF16280C5C1B4D /* Pods_WeatherMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC775B733E5225DB0B5CFE /* Pods_WeatherMapAPI.framework */; };
 		A0578BE4E2EB423FF8497507 /* Pods_WeatherMapAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8964FB71E36C40BF47DE2F5A /* Pods_WeatherMapAPITests.framework */; };
+		CA1EDEE91EF83BA20069352B /* SearchForCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1EDEE81EF83BA20069352B /* SearchForCityViewController.swift */; };
 		CA3482B71EEEDD59008940B3 /* SearchForCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3482B61EEEDD59008940B3 /* SearchForCity.storyboard */; };
 		CA3482BC1EEEE0DA008940B3 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3482BB1EEEE0DA008940B3 /* Menu.storyboard */; };
 		CA3482BE1EEEE268008940B3 /* SearchForLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA3482BD1EEEE268008940B3 /* SearchForLocation.storyboard */; };
@@ -52,6 +53,7 @@
 		8964FB71E36C40BF47DE2F5A /* Pods_WeatherMapAPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherMapAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B238930E997D8AF3569E8F44 /* Pods-WeatherMapAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMapAPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherMapAPI/Pods-WeatherMapAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		C9DC775B733E5225DB0B5CFE /* Pods_WeatherMapAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherMapAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA1EDEE81EF83BA20069352B /* SearchForCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchForCityViewController.swift; sourceTree = "<group>"; };
 		CA3482B61EEEDD59008940B3 /* SearchForCity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchForCity.storyboard; sourceTree = "<group>"; };
 		CA3482BB1EEEE0DA008940B3 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		CA3482BD1EEEE268008940B3 /* SearchForLocation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchForLocation.storyboard; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		CA55B2931EEAF3FB00A9040D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CA1EDEE81EF83BA20069352B /* SearchForCityViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				CA6988991EF06802008CAB7E /* Service.swift in Sources */,
 				CA3482C41EEF0D37008940B3 /* WelcomeViewController.swift in Sources */,
 				CA3482C61EEF1228008940B3 /* SearchForLocationViewController.swift in Sources */,
+				CA1EDEE91EF83BA20069352B /* SearchForCityViewController.swift in Sources */,
 				CA55B29C1EEB078C00A9040D /* LoginViewController.swift in Sources */,
 				CA69889B1EF08A97008CAB7E /* Weather.swift in Sources */,
 				CA789C9C1EF40F2500E9E185 /* Main.swift in Sources */,

@@ -43,4 +43,32 @@ struct Service {
   
   }
   
+  func getCityLocation(city :String , completion: @escaping (_ json : [String: AnyObject]) -> Void){
+    
+    let url = URL(string: baseURL + "q=" + city + apiKey)
+    print ("\n\nURL:\(String(describing: url))\n\n")
+    
+    URLSession.shared.dataTask(with: url!, completionHandler: {
+      (data, response, error) in
+      if(error != nil){
+        print("error:n\(String(describing: error))")
+      }else{
+        do{
+          
+          let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String : AnyObject]
+          print("\n\n \(json)\n\n")
+          completion(json)
+          /*
+           let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String : AnyObject]
+           
+           print("\n\nCidade:\(String(describing: json["name"]))-\(String(describing: json["sys"]?["country"]))\n Descrição:\(String(describing: (json["weather"]?[0] as AnyObject)["description"]))-\(String(describing: (json["weather"]?[0] as AnyObject)["main"]))||\(String(describing: (json["weather"]?[0] as AnyObject)["icon"]))\nTemperatura:\(String(describing: json["main"]?["temp"]))\n")
+           */
+        }catch let error as NSError{
+          print(error)
+        }
+      }
+    }).resume()
+    
+  }
+  
 }

@@ -1,45 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9EY-nR-Kvy">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search For City View Controller-->
         <scene sceneID="gpl-Sd-lKZ">
             <objects>
-                <viewController id="9EY-nR-Kvy" sceneMemberID="viewController">
+                <viewController id="9EY-nR-Kvy" customClass="SearchForCityViewController" customModule="WeatherMapAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aKN-0B-cGr"/>
                         <viewControllerLayoutGuide type="bottom" id="pKi-MR-pvJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="96U-bN-kMi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXd-9h-sDW">
-                                <rect key="frame" x="172" y="323" width="30.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlyCity" translatesAutoresizingMaskIntoConstraints="NO" id="Ji2-mg-Meu">
+                                <rect key="frame" x="0.0" y="123.5" width="320" height="233"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ji2-mg-Meu" secondAttribute="height" multiplier="125:91" id="Kh8-mw-oJI"/>
+                                </constraints>
+                            </imageView>
+                            <searchBar contentMode="redraw" placeholder="Busque por cidade" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-Bt-fW4">
+                                <rect key="frame" x="0.0" y="25" width="320" height="44"/>
+                                <color key="barTintColor" red="0.94901960780000005" green="0.62352941179999999" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" enablesReturnKeyAutomatically="YES"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LPT-NX-LMm">
+                                <rect key="frame" x="60" y="79" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="R7s-b3-O3N"/>
+                                    <constraint firstAttribute="height" constant="200" id="vdh-V5-B41"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZK-Re-0NN" userLabel="CityLabel">
+                                <rect key="frame" x="16" y="313" width="343" height="40"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JA-7q-vKs" userLabel="TempLabel">
+                                <rect key="frame" x="27" y="378" width="320" height="27"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.1803921568627451" green="0.34901960784313724" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="yXd-9h-sDW" firstAttribute="centerX" secondItem="96U-bN-kMi" secondAttribute="centerX" id="PS5-wO-D8e"/>
-                            <constraint firstItem="yXd-9h-sDW" firstAttribute="centerY" secondItem="96U-bN-kMi" secondAttribute="centerY" id="nK0-0k-IWg"/>
+                            <constraint firstItem="QM7-Bt-fW4" firstAttribute="leading" secondItem="96U-bN-kMi" secondAttribute="leading" id="1nm-DO-GhL"/>
+                            <constraint firstItem="mZK-Re-0NN" firstAttribute="width" secondItem="96U-bN-kMi" secondAttribute="width" id="AAs-XE-5nS"/>
+                            <constraint firstItem="LPT-NX-LMm" firstAttribute="top" secondItem="QM7-Bt-fW4" secondAttribute="bottom" constant="10" id="ArF-q7-vPM"/>
+                            <constraint firstItem="QM7-Bt-fW4" firstAttribute="width" secondItem="96U-bN-kMi" secondAttribute="width" id="G0I-lZ-9Rk"/>
+                            <constraint firstItem="mZK-Re-0NN" firstAttribute="top" secondItem="LPT-NX-LMm" secondAttribute="bottom" constant="34" id="GKw-iL-YZK"/>
+                            <constraint firstItem="LPT-NX-LMm" firstAttribute="centerX" secondItem="96U-bN-kMi" secondAttribute="centerX" id="JQG-s3-7ct"/>
+                            <constraint firstItem="Ji2-mg-Meu" firstAttribute="width" secondItem="96U-bN-kMi" secondAttribute="width" id="Lz2-O7-RK2"/>
+                            <constraint firstItem="8JA-7q-vKs" firstAttribute="centerX" secondItem="96U-bN-kMi" secondAttribute="centerX" id="PE3-wn-szv"/>
+                            <constraint firstItem="8JA-7q-vKs" firstAttribute="top" secondItem="mZK-Re-0NN" secondAttribute="bottom" constant="25" id="V38-2Z-J4g"/>
+                            <constraint firstItem="Ji2-mg-Meu" firstAttribute="centerY" secondItem="96U-bN-kMi" secondAttribute="centerY" id="in5-Mf-7Yq"/>
+                            <constraint firstItem="QM7-Bt-fW4" firstAttribute="top" secondItem="aKN-0B-cGr" secondAttribute="bottom" constant="5" id="j8I-l5-qdG"/>
+                            <constraint firstAttribute="trailing" secondItem="QM7-Bt-fW4" secondAttribute="trailing" id="mwQ-WD-Lza"/>
+                            <constraint firstItem="Ji2-mg-Meu" firstAttribute="centerX" secondItem="96U-bN-kMi" secondAttribute="centerX" id="q79-hi-y32"/>
+                            <constraint firstItem="mZK-Re-0NN" firstAttribute="centerX" secondItem="96U-bN-kMi" secondAttribute="centerX" id="xuZ-Mh-vIH"/>
+                            <constraint firstItem="8JA-7q-vKs" firstAttribute="width" secondItem="96U-bN-kMi" secondAttribute="width" id="zkT-NI-pE9"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="QpV-iO-WE1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="mZK-Re-0NN" id="saQ-10-zUa"/>
+                        <outlet property="iconImage" destination="LPT-NX-LMm" id="6Fy-Mr-qs5"/>
+                        <outlet property="imageView" destination="Ji2-mg-Meu" id="TLD-YQ-Ose"/>
+                        <outlet property="searchBar" destination="QM7-Bt-fW4" id="VL5-VS-vN5"/>
+                        <outlet property="tempLabel" destination="8JA-7q-vKs" id="7ie-tK-7je"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NuS-1X-cWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14" y="-785"/>
+            <point key="canvasLocation" x="-18.75" y="-787.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FlyCity" width="281" height="291"/>
+    </resources>
 </document>
