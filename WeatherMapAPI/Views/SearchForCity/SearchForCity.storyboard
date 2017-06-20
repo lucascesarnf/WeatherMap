@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9EY-nR-Kvy">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,17 +19,17 @@
                         <viewControllerLayoutGuide type="bottom" id="pKi-MR-pvJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="96U-bN-kMi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FlyCity" translatesAutoresizingMaskIntoConstraints="NO" id="Ji2-mg-Meu">
-                                <rect key="frame" x="0.0" y="123.5" width="320" height="233"/>
+                                <rect key="frame" x="0.0" y="197" width="375" height="273"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ji2-mg-Meu" secondAttribute="height" multiplier="125:91" id="Kh8-mw-oJI"/>
                                 </constraints>
                             </imageView>
                             <searchBar contentMode="redraw" placeholder="Busque por cidade" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-Bt-fW4">
-                                <rect key="frame" x="0.0" y="25" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="25" width="375" height="44"/>
                                 <color key="barTintColor" red="0.94901960780000005" green="0.62352941179999999" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits" keyboardType="namePhonePad" enablesReturnKeyAutomatically="YES"/>
                                 <scopeButtonTitles>
@@ -38,19 +38,19 @@
                                 </scopeButtonTitles>
                             </searchBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LPT-NX-LMm">
-                                <rect key="frame" x="60" y="79" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="79" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="R7s-b3-O3N"/>
                                     <constraint firstAttribute="height" constant="200" id="vdh-V5-B41"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZK-Re-0NN" userLabel="CityLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mZK-Re-0NN" userLabel="CityLabel">
                                 <rect key="frame" x="16" y="313" width="343" height="40"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="29"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JA-7q-vKs" userLabel="TempLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8JA-7q-vKs" userLabel="TempLabel">
                                 <rect key="frame" x="27" y="378" width="320" height="27"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

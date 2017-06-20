@@ -12,6 +12,8 @@ import CoreLocation
 
 class SearchForLocationViewController: UIViewController , CLLocationManagerDelegate{
   
+  
+  var timeout: Timer = Timer()
   var loading:UIActivityIndicatorView = UIActivityIndicatorView()
   let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
   @IBOutlet weak var logoutButton: UIButton!
@@ -19,7 +21,8 @@ class SearchForLocationViewController: UIViewController , CLLocationManagerDeleg
   @IBOutlet weak var tempLabel: UILabel!
   @IBOutlet weak var cityLabel: UILabel!
   @IBOutlet weak var iconImage: UIImageView!
-  var locationManager: CLLocationManager!
+  var locationManager: CLLocationManager = CLLocationManager()
+  
   var weather : Weather?
   
   override func viewDidLoad() {
@@ -33,23 +36,13 @@ class SearchForLocationViewController: UIViewController , CLLocationManagerDeleg
     loading.transform = CGAffineTransform(scaleX: 1.5,y: 1.5)
     loading.color = Main.sharedInstance.hexStringToUIColor(hex: "FB8E31")
     view.addSubview(loading)
-    loading.startAnimating()
-    UIApplication.shared.beginIgnoringInteractionEvents()
+    stopView()
     super.viewDidLoad()
-    
-    if (CLLocationManager.locationServicesEnabled())
-    {
-      locationManager = CLLocationManager()
-      locationManager.delegate = self
-      locationManager.desiredAccuracy = kCLLocationAccuracyBest
-      locationManager.requestAlwaysAuthorization()
-      locationManager.startUpdatingLocation()
-    }
+    locationAuthorizationStatus()
     
   }
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+  override func viewWillAppear(_ animated: Bool) {
     determineCurrentLocation()
   }
   
@@ -59,15 +52,13 @@ class SearchForLocationViewController: UIViewController , CLLocationManagerDeleg
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
     locationManager.requestAlwaysAuthorization()
-    
-    if CLLocationManager.locationServicesEnabled() {
-      locationManager.startUpdatingHeading()
-      locationManager.startUpdatingLocation()
-    }
+    locationAuthorizationStatus()
   }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
+  
   @IBAction func logoutButtonClicked(_ sender: Any) {
     
     let alert = UIAlertController(title: "Sair do app", message: "Tem Certeza que  deseja sair?", preferredStyle: UIAlertControllerStyle.alert)
@@ -91,8 +82,9 @@ class SearchForLocationViewController: UIViewController , CLLocationManagerDeleg
   
   // MARK: Get user Location
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    loading.startAnimating()
-    UIApplication.shared.beginIgnoringInteractionEvents()
+    
+    stopView()
+    
     let userLocation:CLLocation = locations[0] as CLLocation
     
     manager.stopUpdatingLocation()
@@ -121,16 +113,53 @@ class SearchForLocationViewController: UIViewController , CLLocationManagerDeleg
             
           }
         }
-        self.loading.stopAnimating()
-        self.loading.isHidden = true
-        self.visualEffectView.removeFromSuperview()
-        UIApplication.shared.endIgnoringInteractionEvents()
+        self.startView()
       }
     })
     UIApplication.shared.endIgnoringInteractionEvents()
   }
   func segueForLogin(){
     performSegue(withIdentifier: "segueForLogin", sender: self)
+  }
+  //Verify Location permission
+  
+  func locationAuthorizationStatus(){
+    stopView()
+    //check if location services are enabled at all
+    if CLLocationManager.locationServicesEnabled() {
+      
+      locationManager.startUpdatingHeading()
+      locationManager.startUpdatingLocation()
+      
+      switch(CLLocationManager.authorizationStatus()) {
+      //check if services disallowed for this app particularly
+      case .restricted, .denied:
+        print("No access")
+        
+        notAuthorization()
+        
+      //check if services are allowed for this app
+      case .authorizedAlways, .authorizedWhenInUse:
+        print("Access! We're good to go!")
+      case .notDetermined:
+        print("asking for access...")
+         notAuthorization()
+      }
+      //location services are disabled on the device entirely!
+    } else {
+      print("Location services are not enabled")
+      notAuthorization()
+    }
+    startView()
+  }
+  
+  func notAuthorization(){
+    self.iconImage.image = UIImage(named: Main.sharedInstance.notFoundImage)
+    self.cityLabel.text = Main.sharedInstance.locationNotFoundText1
+    self.tempLabel.text = Main.sharedInstance.locationNotFoundText2
+    self.view.backgroundColor = self.hexStringToUIColor(hex: "66CCFF")
+    self.logoutButton.backgroundColor = self.hexStringToUIColor(hex: "EDE219")
+    startView()
   }
   //Convert String Hex in color
   func hexStringToUIColor (hex:String) -> UIColor {
@@ -153,5 +182,19 @@ class SearchForLocationViewController: UIViewController , CLLocationManagerDeleg
       blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
       alpha: CGFloat(1.0)
     )
+  }
+  
+  func stopView(){
+    loading.startAnimating()
+    loading.isHidden = false
+    self.visualEffectView.isHidden = false
+    UIApplication.shared.beginIgnoringInteractionEvents()
+  }
+  
+  func startView(){
+    loading.stopAnimating()
+    loading.isHidden = true
+    self.visualEffectView.isHidden = true
+    UIApplication.shared.endIgnoringInteractionEvents()
   }
 }
